@@ -1,12 +1,12 @@
 <template>
-  <div class="bg-slate-500">
+  <div class="">
     <Header/>
+    <Task/>
   </div>
 </template>
 
-<script>
+<script setup>
 import Header from './components/Header.vue';
-  export default {
-    components:{Header},
-  }
+import Task from './components/Task.vue';
+ 
 </script>
