@@ -4,8 +4,8 @@
             <button class="border-gray-400 border rounded px-2 py-1 text-sm focus:ring">All Tasks</button>
             <button class="border-gray-400 border rounded px-2 py-1 text-sm focus:ring">Favorite Tasks</button>
         </div>
-        <div class="my-2">
-            <h3>You have 4 tasks left to do</h3>
+        <div class="pt-2 pb-3">
+            <h3 class="m-0 text-gray-500">You have 4 tasks left to do</h3>
         </div>
         <div>
             <div class="flex flex-col gap-3">
