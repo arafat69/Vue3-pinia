@@ -9,33 +9,8 @@
         </div>
         <div>
             <div class="flex flex-col gap-3">
-                <div class="bg-white border border-stone-200 rounded p-3 flex justify-between items-center gap-2">
-                    Amar test Tasks
-                    <div class="gap-2 flex">
-                        <span><i class="bi bi-trash"></i></span>
-                        <span><i class="bi bi-heart"></i></span>
-                    </div>
-                </div>
-                <div class="bg-white border border-stone-200 rounded p-3 flex justify-between items-center gap-2">
-                    Amar test Tasks
-                    <div class="gap-2 flex">
-                        <span><i class="bi bi-trash"></i></span>
-                        <span><i class="bi bi-heart"></i></span>
-                    </div>
-                </div>
-                <div class="bg-white border border-stone-200 rounded p-3 flex justify-between items-center gap-2">
-                    Amar test Tasks
-                    <div class="gap-2 flex">
-                        <span><i class="bi bi-trash"></i></span>
-                        <span><i class="bi bi-heart"></i></span>
-                    </div>
-                </div>
-                <div class="bg-white border border-stone-200 rounded p-3 flex justify-between items-center gap-2">
-                    Amar test Tasks
-                    <div class="gap-2 flex">
-                        <span><i class="bi bi-trash"></i></span>
-                        <span><i class="bi bi-heart"></i></span>
-                    </div>
+                <div v-for="task in taskStore.task" :key="task.id">
+                    <TaskDetails :task="task"/>
                 </div>
             </div>
         </div>
@@ -43,5 +18,8 @@
 </template>
 
 <script setup>
+    import { useTaskStore } from '../stores/TaskStore';
+    import TaskDetails from './TaskDetails.vue';
 
+    const taskStore = useTaskStore()
 </script>
