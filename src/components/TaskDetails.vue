@@ -3,7 +3,7 @@
         {{ task.title }}
         <div class="gap-2 flex">
             <span @click="taskStore.deleteTask(task.id)"><i class="bi bi-trash"></i></span>
-            <span><i class="bi bi-heart"></i></span>
+            <span @click="taskStore.toggleFav(task.id)"><i class="bi bi-heart"></i></span>
         </div>
     </div>
 </template>
