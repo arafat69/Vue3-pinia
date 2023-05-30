@@ -23,6 +23,12 @@ export const useTaskStore = defineStore("taskStore", {
   actions:{
     addTask(task){
         this.task.push(task)
+    },
+    
+    deleteTask(id){
+      this.task = this.task.filter(t => {
+        return t.id !== id
+      })
     }
   },
   persist: true,
