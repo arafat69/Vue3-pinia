@@ -4,20 +4,22 @@
       <img src="/logo.svg" alt="" class="w-14 -rotate-12">
       <div class="text-4xl rotate-2">Pinia Task</div>
     </div>
-      <form @submit.prevent="handleSubmitForm" class="flex justify-center gap-1 mt-3">
-        <input v-model="newTask" placeholder="..." class="w-72 outline-none h-9 focus:ring rounded-sm p-2">
-        <button class="text-white bg-yellow-600 rounded-sm h-9 w-16">Add</button>
-      </form>
+    <form @submit.prevent="handleSubmitForm" class="flex justify-center gap-1 mt-3">
+      <input v-model="newTask" placeholder="..." class="w-72 outline-none h-9 focus:ring rounded-sm p-2">
+      <button class="text-white bg-yellow-600 rounded-sm h-9 w-16">Add</button>
+    </form>
   </header>
 </template>
 
 <script>
 import { ref } from 'vue';
 import { useTaskStore } from '../stores/TaskStore';
+import { useToast } from 'vue-toastification';
 export default {
-  setup(){
+  setup() {
     const taskStore = useTaskStore()
     const newTask = ref('')
+    const toast = useToast()
 
     const handleSubmitForm = () => {
       if (newTask.value.length > 0) {
@@ -27,9 +29,10 @@ export default {
           id: Math.floor(Math.random() * 1000)
         })
         newTask.value = ''
+        toast.success('New Task Added Successfully')
       }
     }
-    return {handleSubmitForm, newTask}
+    return { handleSubmitForm, newTask }
   }
 }
 </script>
